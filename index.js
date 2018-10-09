@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var port = process.env.PORT || 8080;
+app.set('port', (process.env.PORT || 8080));
 
 app.get('/', function(req,res){
     res.send('HerokuApp');
@@ -20,4 +20,4 @@ io.on('connection', function(socket){
     });
 });
 
-app.listen(port,function(){console.log('App 실행');});
+app.listen(app.get('port'),function(){console.log('App 실행');});
