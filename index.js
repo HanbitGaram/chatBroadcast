@@ -1,8 +1,13 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.get('/');
+var port = process.env.PORT || 8080;
+
+app.get('/', function(req,res){
+    res.send('HerokuApp');
+});
 var chatname = null;
 io.on('connection', function(socket){
     socket.on('action_passcode', function(data) {
@@ -15,4 +20,4 @@ io.on('connection', function(socket){
     });
 });
 
-http.listen(80,function(){console.log('App 실행');});
+app.listen(port,function(){console.log('App 실행');});
