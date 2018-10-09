@@ -15,4 +15,4 @@ io.on('connection', function(socket){
     });
 });
 
-http.listen(3000,function(){console.log('App 실행');});
+http.listen(80,function(){console.log('App 실행');});
