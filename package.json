@@ -4,7 +4,7 @@
   "description": "서브타이틀 전송용 앱통신 애플리케이션",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "주식회사 라임프렌즈",
   "license": "MIT",
