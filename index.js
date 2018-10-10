@@ -10,7 +10,6 @@ app.use(function(req, res, next) {
 });
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var ios = socketIO(http);
 
 
 app.set('port', (process.env.PORT || 3000));
