@@ -9,7 +9,8 @@ app.use(function(req, res, next) {
     next();
 });
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = app.listen(app.get('port'),function(){console.log('App 실행');});
+var io = require('socket.io').listen(server);
 
 
 app.set('port', (process.env.PORT || 3000));
@@ -28,5 +29,3 @@ io.on('connection', function(socket){
         io.to(chatname).emit('subtitle_txt', msg);
     });
 });
-
-app.listen(app.get('port'),function(){console.log('App 실행');});
