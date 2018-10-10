@@ -11,10 +11,11 @@ app.use(function(req, res, next) {
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+
 app.set('port', (process.env.PORT || 8080));
 
 app.get('/', function(req,res){
-    res.send('HerokuApp');
+    res.sendFile(__dirname + '/index.html');
 });
 var chatname = null;
 io.on('connection', function(socket){
