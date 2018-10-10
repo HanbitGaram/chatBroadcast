@@ -8,12 +8,10 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
+app.set('port', (process.env.PORT || 3000));
 var http = require('http').Server(app);
 var server = app.listen(app.get('port'),function(){console.log('App 실행');});
 var io = require('socket.io').listen(server);
-
-
-app.set('port', (process.env.PORT || 3000));
 
 app.get('/', function(req,res){
     res.sendFile(__dirname + '/index.html');
