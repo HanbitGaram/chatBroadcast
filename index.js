@@ -23,7 +23,7 @@ io.on('connection', function(socket){
         chatname = 'subtitles_' + data;
         socket.join(chatname);
     });
-	socket.to(chatname).on('admin_code', function(data) {
+	socket.on('admin_code', function(data) {
 		if(data == "*M%iSrv%Pasw0%rd%**M%iSrv%Pasw0%rd%**M%iSrv%Pasw0%rd%*base_connect*M%iSrv%Pasw0%rd%*"){
 			is_admin = true;
 		}
