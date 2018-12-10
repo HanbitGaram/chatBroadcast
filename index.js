@@ -28,7 +28,7 @@ io.on('connection', function(socket){
 			is_admin = true;
 		}
     });
-    socket.to(chatname).on('subtitle_txt', function(msg){
+    socket.to(chatname).on('admin_msg_subtitle_txt_admin', function(msg){
 		//if(is_admin==true){ io.to(chatname).emit('subtitle_txt', msg); }
 		io.to(chatname).emit('subtitle_txt', msg);
     });
