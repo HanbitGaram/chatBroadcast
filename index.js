@@ -29,6 +29,7 @@ io.on('connection', function(socket){
 		}
     });
     socket.to(chatname).on('subtitle_txt', function(msg){
-		if(is_admin==true){ io.to(chatname).emit('subtitle_txt', msg); }
+		//if(is_admin==true){ io.to(chatname).emit('subtitle_txt', msg); }
+		io.to(chatname).emit('subtitle_txt', msg);
     });
 });
